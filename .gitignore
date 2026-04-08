@@ -1,0 +1,29 @@
+# Maven target folder
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# IntelliJ
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+
+# Build files
+out/
+
+# Node (if any frontend later)
+node_modules/
+
+# application local configs
+application-local.properties
+application-dev.properties
