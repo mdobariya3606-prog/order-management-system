@@ -1,10 +1,10 @@
 # Order Management System
 
-Backend system built using **Spring Boot** and **MySQL** to manage complete order lifecycle including **order processing, billing, GST calculation, payment confirmation, and automatic inventory updates**.
+Backend system built using **Spring Boot** and **MySQL** to manage the complete order lifecycle including **order processing, billing, GST calculation, payment confirmation, and automatic inventory updates**.
 
-The system follows a **layered architecture (Controller → Service → Repository)** ensuring clean code structure, scalability, and maintainability.
+The system follows a **layered architecture (Controller → Service → Repository)** ensuring clean structure, scalability, and maintainability.
 
-It integrates automated notification services:
+Integrated notification services:
 - WhatsApp bill sent to customer after order confirmation
 - SMS alert sent to admin when stock reaches threshold level
 - Scheduled daily email report of inventory status
@@ -13,7 +13,7 @@ It integrates automated notification services:
 
 ## Project Overview
 
-This project simulates a real-world order processing workflow where customers purchase products and the system automatically:
+This project simulates a real-world order workflow where customers purchase products and the system automatically:
 
 - Calculates GST
 - Generates bill
@@ -30,7 +30,7 @@ Focus is on **transaction safety**, **automation**, and **scalable backend desig
 
 ### Order Processing
 - Create product orders
-- Generate bill automatically
+- Automatic bill generation
 - GST calculation included in total amount
 - Payment confirmation workflow
 - Maintains order records
@@ -72,18 +72,19 @@ Focus is on **transaction safety**, **automation**, and **scalable backend desig
 
 ## Project Structure
 
+```
 order-management-system
 │
-├── controller # API endpoints
-├── service # Business logic
-├── repository # Database operations
-├── model # Entity classes
-├── dto # Request and response objects
-├── config # Configuration files
-├── scheduler # Daily email scheduler
-├── notification # WhatsApp and SMS integration
+├── controller        # API endpoints
+├── service           # Business logic
+├── repository        # Database operations
+├── model             # Entity classes
+├── dto               # Request and response objects
+├── config            # Configuration files
+├── scheduler         # Daily email scheduler
+├── notification      # WhatsApp and SMS integration
 └── application.properties
-
+```
 
 ---
 
@@ -124,7 +125,7 @@ order-management-system
 - payment_status
 - order_date
 
-### Order Items Table
+### Order_Items Table
 - id
 - order_id
 - product_id
@@ -181,21 +182,27 @@ order-management-system
 ### Steps to Run Project
 
 1. Clone repository
-git clone https://github.com/mdobariya3606-prog/order-management-system.git
 
+```
+git clone https://github.com/mdobariya3606-prog/order-management-system.git
+```
 
 2. Configure database in application.properties
+
+```
 spring.datasource.url=jdbc:mysql://localhost:3306/order_db
 spring.datasource.username=root
 spring.datasource.password=yourpassword
 
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
-
+```
 
 3. Run application
-mvn spring-boot:run
 
+```
+mvn spring-boot:run
+```
 
 4. Test APIs using Postman
 
